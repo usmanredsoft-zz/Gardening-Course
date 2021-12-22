@@ -1,0 +1,211 @@
+html, body
+{
+    height: 100%;
+}
+body
+{
+    font-family: sans-serif;
+    margin: 0;
+}
+.custom_button
+{
+    font-weight: bold;
+}
+#app
+{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+#garden
+{
+    position: relative;
+    flex: 1;
+    box-sizing: border-box;
+    border: 1px solid lightgrey;
+    overflow: hidden;
+}
+#garden_bg
+{
+    position: absolute;
+}
+#garden__canvas
+{
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+}
+#ui_cont
+{
+    flex: 0 0 550px;
+    padding: 20px;
+}
+#draw_button,
+#undo_button,
+#clean_button,
+#save_button
+{
+    width: 70px;
+    user-select: none;
+}
+#undo_button,
+#clean_button,
+#save_button
+{
+    margin-left: 10px;
+}
+#items_tabs_cont
+{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 100%;
+    padding-top: 20px;
+    user-select: none;
+    margin-top: -1px;
+}
+#items_tabs_headers_cont
+{
+    display: flex;
+    flex-flow: row wrap;
+    pointer-events: none;
+}
+.plants_tab__header
+{
+    flex: 1 1 80px;
+    background-color: #72ac4d;
+    color: white;
+    border: none;
+    outline: 1px solid lightgrey;
+    pointer-events: auto;
+    padding: 10px 15px 10px 15px;
+    font-weight: bold;
+}
+.plants_tab__header:hover
+{
+    background-color: darkseagreen;
+    transition: background-color 0.15s ease-out;
+}
+.plants_tab__active_header
+{
+    background-color: #4674c1 !important;
+}
+.items_tab
+{
+    flex: 1;
+    outline: 1px solid lightgrey;
+    margin-top: 1px;
+    padding: 5px;
+    overflow: auto;
+    font-size: 0;
+    user-select: none;
+}
+.items_tab:nth-child(7) .item
+{
+    min-height: 55px;
+    vertical-align: top;
+}
+.items_tab:nth-child(7) .item:nth-of-type(4),
+.items_tab:nth-child(7) .item:nth-of-type(6),
+.items_tab:nth-child(7) .item:nth-of-type(7)
+{
+   min-height: 20px;
+}
+.items_tab:nth-child(7) .item:nth-of-type(1) label
+{
+    margin-left: 75px;
+}
+.items_tab:nth-child(7) .item:nth-of-type(2) label
+{
+    margin-left: 36px;
+}
+.items_tab:nth-child(7) .item:nth-of-type(4)
+{
+    margin-left: 15px;
+}
+.items_tab:nth-child(7) .item:nth-of-type(4) label
+{
+    margin-left: 20px;
+}
+.items_tab:nth-child(7) .item:nth-of-type(5) label
+{
+    margin-left: 30px;
+}
+.items_tab:nth-child(7) .item:nth-of-type(7)
+{
+    margin-left: calc(50% + 7px);
+}
+.items_tab:nth-child(7) .item:nth-of-type(7) label
+{
+    margin-left: 15px;
+}
+.items_tab:nth-child(7) .item:nth-of-type(6)
+{
+    margin-top: -15px;
+}
+.items_tab:nth-child(7) .item:nth-of-type(7)
+{
+    margin-top: -40px;
+}
+.items_tab:nth-child(7) .item:nth-of-type(8)
+{
+    display: block;
+}
+.items_tab:nth-child(7) .item:nth-of-type(10)
+{
+    margin-left: -140px;
+}
+.items_tab:nth-child(7) .item:nth-of-type(9),
+.items_tab:nth-child(7) .item:nth-of-type(10)
+{
+    margin-top: -50px;
+}
+.item
+{
+    display: inline-flex;
+    position: relative;
+    width: 45%;
+    overflow: hidden;
+    pointer-events: none;
+    -webkit-user-drag: none;
+    margin: 10px;
+    text-align: center;
+    align-self: end;
+    align-items: center;
+}
+.item img
+{
+    pointer-events: auto;
+    -webkit-user-drag: none;
+}
+.item label
+{
+    display: inline-block;
+    -webkit-user-drag: none;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.draggable_item
+{
+    transform-origin: center center;
+    transform: scale(1.1);
+}
+
+@media only screen and (orientation: portrait) and (max-width: 500px)
+{
+    #app
+    {
+        flex-direction: column;
+    }
+    #garden
+    {
+        flex-basis: 50%;
+    }
+    #ui_cont
+    {
+        height: calc(50% - 40px);
+    }
+}

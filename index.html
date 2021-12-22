@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Gardening Course</title>
+
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+
+    <body>
+
+        <div id="app">
+
+            <div id="garden">
+
+                <img id="garden_bg" src="assets/images/bg.png" width="100%" height="100%">
+                <canvas id="garden__canvas"></canvas>
+
+            </div>
+
+            <div id="ui_cont">
+
+                <div>
+
+                    <button id="draw_button" class="custom_button">Draw</button>
+                    <button id="undo_button" class="custom_button" disabled>Undo</button>
+                    <button id="clean_button" class="custom_button">Clean</button>
+                    <button id="save_button" class="custom_button">Save</button>
+
+                </div>
+
+                <div id="items_tabs_cont">
+
+                    <div id="items_tabs_headers_cont">
+
+                        <button class="plants_tab__header plants_tab__active_header">Trees</button>
+                        <button class="plants_tab__header">Palms and Cycads</button>
+                        <button class="plants_tab__header">Shrubs and Grasses</button>
+                        <button class="plants_tab__header">Perrenials</button>
+                        <button class="plants_tab__header">Groundcovers</button>
+                        <button class="plants_tab__header">Materials</button>
+
+                    </div>
+
+                    <div class="items_tab">
+
+                        <div class="item">
+                            <img draggable="false" src="assets/images/Trees/Winged_Elm.png" alt="Winged Elm">
+                            <label>Winged Elm</label>
+                        </div>
+                        <div class="item">
+                            <img draggable="false" src="assets/images/Trees/Magnolia.png" alt="Magnolia">
+                            <label>Magnolia</label>
+                        </div>
+                        <div class="item">
+                            <img draggable="false" src="assets/images/Trees/Shumard_Oak.png" alt="Shumard Oak">
+                            <label>Shumard Oak</label>
+                        </div>
+                        <div class="item">
+                        <img draggable="false" src="assets/images/Trees/American_Holly.png" alt="American Holly">
+                        <label>American Holly</label>
+                    </div>
+                        <div class="item">
+                            <img draggable="false" src="assets/images/Trees/Crepe_Myrtle.png" alt="Crepe Myrtle">
+                            <label>Crepe Myrtle</label>
+                        </div>
+                        <div class="item">
+                            <img draggable="false" src="assets/images/Trees/Citrus.png" alt="Citrus">
+                            <label>Citrus</label>
+                        </div>
+                        <div class="item">
+                            <img draggable="false" src="assets/images/Trees/Loquat.png" alt="Loquat">
+                            <label>Loquat</label>
+                        </div>
+                     
+
+                    </div>
+
+                    <div class="items_tab">
+
+                        <div class="item">
+                            <img draggable="false" src="assets/images/Palms-Cycads/Sabal_Palm.png" alt="Sabal Palm">
+                            <label>Sabal Palm</label>
+                        </div>
+                        <div class="item">
+                            <img draggable="false" src="assets/images/Palms-Cycads/Coontie.png" alt="Coontie">
+                            <label>Coontie</label>
+                        </div>
+                        <div class="item">
+                            <img draggable="false" src="assets/images/Palms-Cycads/Windmill_Palm.png" alt="Windmill Palm">
+                            <label>Windmill Palm</label>
+                        </div>
+                        <div class="item">
+                            <img draggable="false" src="assets/images/Palms-Cycads/Cardboard_Palm.png" alt="Cardboard Palm">
+                            <label>Cardboard Palm</label>
+                        </div>
+                        <div class="item">
+                            <img draggable="false" src="assets/images/Palms-Cycads/Saw_Palmetto.png" alt="Saw Palmetto">
+                            <label>Saw Palmetto</label>
+                        </div>
+
+                    </div>
+
+                    <div class="items_tab">
+
+                        <div class="item">
+                            <img draggable="false"
+                                 src="assets/images/Shrubs-Grasses/Florida_Anise.png" alt="Florida Anise">
+                            <label>Florida Anise</label>
+                        </div>
+                        <div class="item">
+                            <img draggable="false"
+                                 src="assets/images/Shrubs-Grasses/Dwarf_Viburnum.png" alt="Dwarf Viburnum">
+                            <label>Dwarf Viburnum</label>
+                        </div>
+                        <div class="item">
+                            <img draggable="false"
+                                 src="assets/images/Shrubs-Grasses/Beauty_Berry.png" alt="Beauty Berry">
+                            <label>Beauty Berry</label>
+                        </div>
+                        <div class="item">
+                            <img draggable="false"
+                                 src="assets/images/Shrubs-Grasses/Fackahatchee_Grass.png" alt="Fackahatchee Grass">
+                            <label>Fackahatchee Grass</label>
+                        </div>
+                        <div class="item">
+                            <img draggable="false"
+                                 src="assets/images/Shrubs-Grasses/Simpson_Stopper.png" alt="Simpson Stopper">
+                            <label>Simpson Stopper</label>
+                        </div>
+                        <div class="item">
+                            <img draggable="false"
+                                 src="assets/images/Shrubs-Grasses/Muhly_Grass.png" alt="Muhly Grass">
+                            <label>Muhly Grass</label>
+                        </div>
+                        <div class="item">
+                            <img draggable="false"
+                                 src="assets/images/Shrubs-Grasses/Rabbiteye_Blueberry.png" alt="Rabbiteye Blueberry">
+                            <label>Rabbiteye Blueberry</label>
+                        </div>
+
+                    </div>
+
+                    <div class="items_tab">
+
+                        <div class="item">
+                            <img draggable="false" src="assets/images/Perrenials/Native_Milkweed.png" alt="Native Milkweed">
+                            <label>Native Milkweed</label>
+                        </div>
+                        <div class="item">
+                            <img draggable="false" src="assets/images/Perrenials/Pinecone_Ginger.png" alt="Pinecone Ginger">
+                            <label>Pinecone Ginger</label>
+                        </div>
+                        <div class="item">
+                            <img draggable="false" src="assets/images/Perrenials/Red_Salvia.png" alt="Red Salvia">
+                            <label>Red Salvia</label>
+                        </div>
+                        <div class="item">
+                            <img draggable="false" src="assets/images/Perrenials/Bromeliads.png" alt="Bromeliads">
+                            <label>Bromeliads</label>
+                        </div>
+                        <div class="item">
+                            <img draggable="false" src="assets/images/Perrenials/Cutleaf_Coneflower.png" alt="Cutleaf Coneflower">
+                            <label>Cutleaf Coneflower</label>
+                        </div>
+                        <div class="item">
+                            <img draggable="false" src="assets/images/Perrenials/Lantana_Depressa.png" alt="Lantana Depressa">
+                            <label>Lantana Depressa</label>
+                        </div>
+                        <div class="item">
+                            <img draggable="false" src="assets/images/Perrenials/Coreopsis.png" alt="Coreopsis">
+                            <label>Coreopsis</label>
+                        </div>
+                        <div class="item">
+                            <img draggable="false" src="assets/images/Perrenials/Holly_Fern.png" alt="Holly Fern">
+                            <label>Holly Fern</label>
+                        </div>
+                        <div class="item">
+                            <img draggable="false" src="assets/images/Perrenials/Beach_Sunflowers.png" alt="Beach Sunflowers">
+                            <label>Beach sunflowers</label>
+                        </div>
+
+                    </div>
+
+                    <div class="items_tab">
+
+                        <div class="item">
+                            <img draggable="false" src="assets/images/Groundcovers/Perennial_Peanut.png" alt="Perennial Peanut">
+                            <label>Perennial Peanut</label>
+                        </div>
+                        <div class="item">
+                            <img draggable="false" src="assets/images/Groundcovers/Hart_Tongue_Fern.png" alt="Hart Tongue Fern">
+                            <label>Hart Tongue Fern</label>
+                        </div>
+                        <div class="item">
+                            <img draggable="false" src="assets/images/Groundcovers/Sunshine_Mimosa.png" alt="Sunshine Mimosa">
+                            <label>Sunshine Mimosa</label>
+                        </div>
+                        <div class="item">
+                            <img draggable="false" src="assets/images/Groundcovers/Zoysia_Grass.png" alt="Zoysia Grass">
+                            <label>Zoysia Grass</label>
+                        </div>
+                        <div class="item">
+                            <img draggable="false" src="assets/images/Groundcovers/Asiatic_Jasmine.png" alt="Asiatic Jasmine">
+                            <label>Asiatic Jasmine</label>
+                        </div>
+
+                    </div>
+
+                    <div class="items_tab">
+
+                        <div class="item">
+                            <img draggable="false" src="assets/images/Materials/image_2020_08_09T11_43_46_460Z.png" alt="Rain Barrel">
+                            <label>Rain Barrel</label>
+                        </div>
+                        <div class="item">
+<!--                            <img draggable="false" src="assets/images/Materials/image_2020_08_09T11_44_23_198Z.png" alt="Micro irrigation">-->
+                            <label>Irrigation</label>
+                        </div>
+                        <div class="item">
+                            <img draggable="false" src="assets/images/Materials/image_2020_08_09T11_43_52_521Z.png" alt="Down Spouts">
+                            <label>Down Spouts</label>
+                        </div>
+                        <div class="item">
+                            <img draggable="false" src="assets/images/Materials/image_2020_08_09T11_44_13_417Z.png" alt="Rotors">
+                            <label>Rotors</label>
+                        </div>
+                        <div class="item">
+                            <img draggable="false" src="assets/images/Materials/image_2020_08_09T11_43_58_137Z.png" alt="Compost Pile">
+                            <label>Compost Pile</label>
+                        </div>
+                        <div class="item">
+                            <img draggable="false" src="assets/images/Materials/image_2020_08_09T11_44_18_551Z.png" alt="High Efficient Sprayers">
+                            <label>High Efficient Sprayers</label>
+                        </div>
+                        <div class="item">
+                            <img draggable="false" src="assets/images/Materials/image_2020_08_09T11_44_23_198Z.png" alt="Micro irrigation">
+                            <label>Micro irrigation</label>
+                        </div>
+                        <div class="item">
+<!--                            <img draggable="false" src="assets/images/Materials/image_2020_08_09T11_44_23_198Z.png" alt="Micro irrigation">-->
+                            <label>These words will act as objects</label>
+                        </div>
+                        <div class="item">
+<!--                            <img draggable="false" src="assets/images/Materials/image_2020_08_09T11_44_23_198Z.png" alt="Micro irrigation">-->
+                            <label>Mulch</label>
+                        </div>
+                        <div class="item">
+<!--                            <img draggable="false" src="assets/images/Materials/image_2020_08_09T11_44_23_198Z.png" alt="Micro irrigation">-->
+                            <label>Turf</label>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <script src="js/FileSaver.js"></script>
+        <script src="js/App.js"></script>
+
+    </body>
+
+</html>
